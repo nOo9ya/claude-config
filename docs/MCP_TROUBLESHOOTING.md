@@ -255,6 +255,9 @@ claude mcp add --global memory -- npx -y @modelcontextprotocol/server-memory
 
 # DeepWiki MCP 서버 (전역 설치)
 claude mcp add --global deepwiki -- npx mcp-deepwiki@latest
+
+# Playwright MCP 서버 (전역 설치) - 비권장, 참고용만
+claude mcp add --global playwright -- npx @playwright/mcp
 ```
 
 ### 전역 설정 확인
@@ -273,6 +276,7 @@ context7: https://mcp.context7.com/mcp (HTTP) - ✓ Connected
 sequential-thinking: npx -y @modelcontextprotocol/server-sequential-thinking - ✓ Connected
 memory: npx -y @modelcontextprotocol/server-memory - ✓ Connected
 deepwiki: npx mcp-deepwiki@latest - ✓ Connected
+playwright: npx @playwright/mcp - ✓ Connected (비권장)
 ```
 
 ### 프로젝트별 vs 전역 설정 비교
@@ -306,6 +310,7 @@ claude mcp remove --global context7
 claude mcp remove --global sequential-thinking
 claude mcp remove --global memory
 claude mcp remove --global deepwiki
+claude mcp remove --global playwright
 
 # 전역 설정 파일 직접 확인
 cat ~/.claude.json
@@ -316,6 +321,7 @@ cat ~/.claude.json
 1. **기본 MCP 서버들은 전역 설치**:
 
     - context7, sequential-thinking, memory, deepwiki
+    - playwright (비권장, 필요시에만)
 
 2. **프로젝트별 특수 요구사항만 로컬 설치**:
 
