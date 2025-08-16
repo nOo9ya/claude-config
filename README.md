@@ -31,6 +31,7 @@ claude config get -g verbose
 - `global-config.json`: 글로벌 설정 (verbose 모드 포함)
 - `settings.json`: 권한 및 기본 설정
 - `agents/`: 커스텀 에이전트 설정 파일들
+- `.gitmessage.txt`: Git 커밋 메시지 템플릿
 
 ### 에이전트 목록
 - `backend-api-reliability-expert.md`
@@ -67,11 +68,23 @@ cp -r agents ~/.claude/
 claude config set -g verbose true
 ```
 
-### 3. 설정 확인
+### 3. Git 커밋 메시지 템플릿 설정
+```bash
+# 커밋 메시지 템플릿으로 .gitmessage.txt 설정
+git config commit.template ./.gitmessage.txt
+
+# 글로벌로 설정하려면 (모든 저장소에 적용)
+git config --global commit.template ~/.gitmessage.txt
+```
+
+### 4. 설정 확인
 ```bash
 # 설정이 올바르게 적용되었는지 확인
 claude config list -g
 claude config list
+
+# Git 템플릿 설정 확인
+git config commit.template
 ```
 
 ## 📋 제외된 파일들
@@ -94,9 +107,12 @@ claude config list -g > global-config.json
 cp ~/.claude/settings.json .
 cp -r ~/.claude/agents .
 
-# 변경사항 커밋
+# Git 템플릿 파일도 함께 복사 (글로벌 설정 시)
+cp ~/.gitmessage.txt .
+
+# 변경사항 커밋 (템플릿이 설정되어 있으면 자동으로 적용됨)
 git add .
-git commit -m "설정 업데이트"
+git commit
 git push
 ```
 
