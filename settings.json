@@ -17,6 +17,18 @@
       "TodoWrite(*)"
     ]
   },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/add_agent_context.py"
+          }
+        ]
+      }
+    ]
+  },
   "dangerouslySkipPermissions": false,
   "defaultMode": "acceptEdits"
 }

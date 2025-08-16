@@ -48,6 +48,7 @@ claude config get -g verbose
 - `settings.json`: 권한 및 기본 설정
 - `agents/`: 커스텀 에이전트 설정 파일들
 - `.gitmessage.txt`: Git 커밋 메시지 템플릿
+- `.claude/hooks/`: 자동화 훅 스크립트 파일들
 
 ### 에이전트 목록
 - `backend-api-reliability-expert.md`
@@ -78,7 +79,12 @@ cp ~/.claude/settings.json ~/.claude/settings.json.backup
 
 # 새 설정 적용
 cp settings.json ~/.claude/
+cp .claude.json ~/.claude/
 cp -r agents ~/.claude/
+cp -r .claude/hooks ~/.claude/
+
+# 훅 스크립트 실행 권한 설정
+chmod +x ~/.claude/hooks/add_agent_context.py
 
 # 글로벌 설정 적용
 claude config set -g verbose true
@@ -132,8 +138,37 @@ git commit
 git push
 ```
 
+## 🤖 자동 서브 에이전트 선택 기능
+
+### 개요
+`.claude/hooks/add_agent_context.py` 스크립트는 사용자의 프롬프트를 분석하여 자동으로 적절한 서브 에이전트를 권장하는 기능입니다.
+
+### 지원하는 서브 에이전트
+- `code-refactoring-specialist`: 코드 리팩토링 및 개선
+- `system-architect`: 시스템 아키텍처 설계
+- `technical-documentation-expert`: 기술 문서화
+- `performance-optimizer`: 성능 최적화
+- `educational-guidance-mentor`: 교육 및 학습 지원
+- `devops-infrastructure-expert`: DevOps 및 인프라
+- `security-threat-modeling-expert`: 보안 분석 및 위협 모델링
+- `backend-api-reliability-expert`: 백엔드 API 및 신뢰성
+- `frontend-accessibility-expert`: 프론트엔드 및 접근성
+
+### 작동 방식
+1. 사용자가 프롬프트를 입력하면 자동으로 키워드를 분석
+2. 한국어/영어 키워드를 기반으로 적절한 에이전트 선택
+3. 복잡한 작업인 경우에만 에이전트 사용을 권장
+4. 권장 에이전트와 설명을 자동으로 표시
+
+### 설정 요구사항
+⚠️ **중요**: 훅 스크립트는 실행 권한이 필요합니다.
+```bash
+chmod +x ~/.claude/hooks/add_agent_context.py
+```
+
 ## ⚠️ 주의사항
 
 - 개인 인증 정보는 절대 커밋하지 마세요
 - 프로젝트별 설정은 각 환경에서 별도 관리하세요
 - 에이전트 설정 변경 시 다른 PC에서도 동기화해주세요
+- 훅 스크립트 복사 시 반드시 실행 권한을 설정하세요

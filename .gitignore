@@ -36,3 +36,7 @@ Thumbs.db
 .env.local
 .env.development
 .env.production
+
+# Claude 설정 파일 (hooks만 추가)
+.claude/
+!.claude/hooks/

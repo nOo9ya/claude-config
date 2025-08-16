@@ -47,11 +47,10 @@
   "hooks": {
     "UserPromptSubmit": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "echo '🤖 작업 타입을 분석하여 적절한 서브 에이전트를 자동 선택합니다.'"
+            "command": ".claude/hooks/add_agent_context.py"
           }
         ]
       }
