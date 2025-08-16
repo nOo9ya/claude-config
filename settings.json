@@ -1,0 +1,22 @@
+{
+  "feedbackSurveyState": {
+    "lastShownTime": 1753982579257
+  },
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)", 
+      "MultiEdit(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "LS(*)",
+      "WebFetch(*)",
+      "Task(*)",
+      "TodoWrite(*)"
+    ]
+  },
+  "dangerouslySkipPermissions": false,
+  "defaultMode": "acceptEdits"
+}

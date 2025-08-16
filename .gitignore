@@ -1,0 +1,38 @@
+# 개인 정보 및 인증 파일
+.credentials.json
+*.credentials*
+
+# 프로젝트별 설정 (환경마다 다름)
+projects/
+project-*
+
+# 세션 및 캐시 데이터
+shell-snapshots/
+todos/
+*.log
+*.cache
+
+# 통계 및 분석 데이터
+statsig/
+stats/
+analytics/
+
+# IDE 관련 설정 (환경마다 다름)
+ide/
+.ide/
+
+# 임시 파일
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# 백업 파일
+*.backup
+*.bak
+*~
+
+# 로컬 환경 설정
+.env.local
+.env.development
+.env.production
