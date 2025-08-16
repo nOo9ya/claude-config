@@ -1,5 +1,21 @@
 # Claude 설정 공유
 
+## 📂 설정 파일 비교
+
+### settings.json vs .claude.json
+
+- **settings.json**: Claude Code의 기본 사용자 설정 파일
+  - 권한 설정 (permissions)
+  - 피드백 상태 (feedbackSurveyState)
+  - 기본 모드 설정 (defaultMode)
+  - 권한 스킵 설정 (dangerouslySkipPermissions)
+
+- **.claude.json**: MCP 서버 및 고급 기능 설정 파일
+  - MCP 서버 연결 설정 (mcpServers)
+  - 훅(hooks) 설정
+  - MCP JSON 서버 활성화/비활성화 설정
+  - 고급 워크플로우 설정
+
 ## 📋 개요
 
 이 저장소는 여러 PC에서 동일한 Claude CLI 설정을 공유하기 위한 설정 파일들을 관리합니다.
