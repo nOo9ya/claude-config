@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__context7__get-library-docs",
+      "mcp__context7__resolve-library-id",
+      "mcp__memory__add_observations",
+      "mcp__memory__create_entities",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_install",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_press_key",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__deepwiki__*",
+      "Bash(*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)",
+      "MultiEdit(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "LS(*)",
+      "WebFetch(*)",
+      "Task(*)",
+      "TodoWrite(*)"
+    ],
+    "deny": [],
+    "dengeroulsySkipPermissions": false,
+    "defaultMode": "acceptEdits",
+    "additionalDirectories": [
+      "/tmp/claude-config" // example
+    ]
+  }
+}
