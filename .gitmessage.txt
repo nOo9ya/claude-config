@@ -1,0 +1,63 @@
+################ Title Message
+# 변경사항 명확히 작성, 끝에 마침표 금지
+# <타입>(<스코프>) - [#issueNumber|#refNumber]: <제목> 의 형식으로 제목을 아래 공백줄에 작성
+# ex) feat - #123: 비밀번호 찾기 기능 추가
+# ex) feat(password-service): 비밀번호 찾기 기능 추가
+# ex) fix: 비밀번호 찾기 에러 (#123)
+##### Subject 50 characters ################# -> |
+
+# 바로 아래 공백은 지우지 마세요 (제목과 본문의 분리를 위함)
+
+################ Body Message (Optional)
+# 본문(구체적인 내용)을 아랫줄에 작성
+# - 회원가입 후 이메일을 통해 인증 링크를 보내도록 구현
+# - 인증 토큰을 검증하여 계정 활성화 가능하도록 추가
+# - 인증 만료 시간 및 재전송 기능 포함
+######## Body 72 characters ####################################### -> |
+1. What?
+
+2. Why?
+
+3. How?
+
+################ Footer (Optional)
+# 꼬리말(footer)을 아랫줄에 작성
+# <타입>: [#issueNumber-]
+# ex) Closes: #123 | Resolves: #123
+# ex) 이슈 닫음: #123 | 관련 이슈: #123
+##### Footer 40 characters ####### -> |
+
+################ COMMIT END
+# Title type : can be - Conventional Commits styles
+# feat       : 새로운 기능 추가(feature)
+# fix        : 버그 수정(bug fix)
+# docs       : 문서 수정(README, API 문서 수정)
+# style      : 코드 의미에 영향을 주지 않는 css등 사용자 ui 디자인 변경
+# refactor   : 코드 리팩토링(기능 변경 없음)
+# comment    : 주석 추가 및 수정
+# security   : 보안 취약점 해결 및 관련 변경 사항
+# perf       : 성능 개선 관련 수정
+# test       : 테스트 코드 추가 및 테스트 코드 리팩토링
+# chore      : 빌드 프로세스 수정 및 환경 설정 파일 변경, 패키지 매니저 수정사항
+# rename     : 파일 혹은 폴더명을 수정하거나 옮기는 작업만 하는 경우
+# remove     : 파일을 삭제하는 작업만 수행한 경우
+# revert     : 이전 커밋으로 되돌리는 작업(예시: This reverts commit <hash>)
+# ci         : CI 구성 파일 및 스크립트에 대한 변경 사항(예시 범위: Travis, Circle, BrowserStack, SauceLabs)
+# build      : 빌드 시스템이나 외부 종속성에 영향을 미치는 변경 사항(예시 범위: gulp, broccoli, npm)
+# -------------------------------------
+# Footer type can be
+# Closes|Resolves   : 이슈를 해결했을 때 사용(해당 이슈 닫음)
+# Ref               : 참고할 이슈가 있을 때 사용
+# Related to        : 해당 커밋에 관련된 이슈 번호
+# -------------------------------------
+# Remember me ~
+# subject는 어떤 작업을 했는지 명확하게 드러나야하고, 요약하여 작성합니다.
+# subject는 명령조로 작성하며, 문장보다는 구문으로 작성합니다.
+# 영문으로 작성할 경우 첫글자는 대문자로 시작합니다.
+# 줄 끝에 마침표를 사용하지 않습니다.
+# subject와 body 사이에 한 줄 띄어  구분합니다.
+# body는 부연 설명이 필요한 경우 작성합니다. 선택사항입니다.
+# body에서 어떻게 했는지가 아니라, 무엇을 왜 했는지를 작성합니다.
+# body에 목록을 나타낼 때는 "-"로 시작합니다.
+# footer는 이슈 번호를 참조시킬 때 주로 사용합니다. 선택사항입니다.
+################
